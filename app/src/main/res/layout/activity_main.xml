@@ -19,6 +19,6 @@
         android:layout_below="@id/card_text_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Ver respuesta" />
+        android:text="@string/answer_button_text" />
 
 </RelativeLayout>
