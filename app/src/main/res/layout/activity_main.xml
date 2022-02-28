@@ -11,7 +11,8 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:textSize="20dp"
-        android:text="Tree" />
+        android:text="Tree"
+        tools:text="Texto en entorno"/>
 
     <Button
         android:id="@+id/card_answer_button"
