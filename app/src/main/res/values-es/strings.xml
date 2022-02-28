@@ -2,5 +2,6 @@
 <resources>
     <string name="app_name">Cards</string>
     <string name="question_text">Tree</string>
+    <string name="answer_text">Arbol</string>
     <string name="answer_button_text">Ver respuesta</string>
 </resources>
