@@ -7,7 +7,9 @@ import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
+import androidx.databinding.DataBindingUtil
 import java.time.LocalDateTime
+import es.uam.eps.dadm.cards.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     private lateinit var answerButton: Button
@@ -18,13 +20,13 @@ class MainActivity : AppCompatActivity() {
     private lateinit var questionTextView: TextView
     private lateinit var difficultyButtons: LinearLayout
     private lateinit var separadorView: View
+    lateinit var binding: ActivityMainBinding
+    var card = Card("TEST", "PRUEBA")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        var card = Card("TEST", "PRUEBA")
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         setContentView(R.layout.activity_main)
-
-
 
         answerButton = findViewById(R.id.answer_button)
         questionTextView = findViewById(R.id.question_text_view)
