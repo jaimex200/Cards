@@ -4,4 +4,8 @@
     <string name="question_text">Tree</string>
     <string name="answer_text">Arbol</string>
     <string name="answer_button_text">Ver respuesta</string>
+    <string name="help_text">Ayuda</string>
+    <string name="easy_button_title">Facil</string>
+    <string name="doubt_button_title">Duda</string>
+    <string name="difficult_button_title">Dificil</string>
 </resources>
