@@ -61,7 +61,7 @@ open class Card(
     }
 
     /**Funcion para actualizart la tarjeta*/
-    private fun update (currentDate: LocalDateTime) {
+    fun update (currentDate: LocalDateTime) {
         easinessAlg()
         repetitionAlg()
         intervalAlg()

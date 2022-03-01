@@ -51,6 +51,7 @@
         android:gravity="center">
 
         <Button
+            android:id="@+id/difficult_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/difficult_button_title"
@@ -58,6 +59,7 @@
         </Button>
 
         <Button
+            android:id="@+id/doubt_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/doubt_button_title"
@@ -65,6 +67,7 @@
         </Button>
 
         <Button
+            android:id="@+id/easy_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/easy_button_title"
