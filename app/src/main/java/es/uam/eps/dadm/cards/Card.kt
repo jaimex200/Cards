@@ -1,5 +1,6 @@
 package es.uam.eps.dadm.cards
 
+import android.view.View
 import java.time.*
 import java.util.UUID
 import kotlin.math.roundToLong
@@ -61,7 +62,7 @@ open class Card(
         }
     }
 
-    /**Funcion para actualizart la tarjeta*/
+    /**Funcion para actualizar la tarjeta*/
     fun update (currentDate: LocalDateTime) {
         easinessAlg()
         repetitionAlg()
@@ -69,6 +70,17 @@ open class Card(
         updateStats()
 
         nextPracticeDate = currentDate.plusDays(interval).toString()
+    }
+
+    /**Funcion para actualizar desde view*/
+    fun update_from_view(view: View) {
+        quality = when(view.id) {
+            R.id.easy_button -> 5
+            R.id.doubt_button -> 3
+            R.id.hard_button -> 0
+            else -> throw Exception("Unavailable quality")
+        }
+        update(LocalDateTime.now())
     }
 
     /**Funcion para actualizar las estadisticas*/
