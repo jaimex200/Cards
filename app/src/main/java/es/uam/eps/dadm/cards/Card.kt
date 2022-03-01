@@ -13,7 +13,8 @@ open class Card(
     var nextPracticeDate: String = LocalDateTime.now().toString(),
     var easiness: Double = 2.5,
     var date: String = LocalDateTime.now().toString(),
-    var id: String = UUID.randomUUID().toString()
+    var id: String = UUID.randomUUID().toString(),
+    var answered: Boolean = false
 ) {
     companion object Load{
         fun fromString(cad: String): Card {
