@@ -14,10 +14,28 @@
         android:text="@string/question_text"
         tools:text="Texto para el entorno"/>
 
-    <Button
+    <TextView
+        android:id="@+id/answer_text_view"
         android:layout_below="@id/question_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:textSize="20dp"
+        android:text="@string/answer_text"
+        tools:text="Texto para el entorno"/>
+
+    <Button
+        android:id="@+id/question_button_view"
+        android:layout_below="@id/answer_text_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/answer_button_text" />
+
+    <Button
+        android:layout_below="@id/question_button_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="AYUDA" />
 
 </RelativeLayout>
