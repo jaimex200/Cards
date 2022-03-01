@@ -2,6 +2,7 @@ package es.uam.eps.dadm.cards
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
@@ -16,5 +17,11 @@ class MainActivity : AppCompatActivity() {
 
         answerButton = findViewById(R.id.answer_button)
         answerTextView = findViewById(R.id.answer_text_view)
+
+        answerButton.setOnClickListener(object : View.OnClickListener {
+            override fun onClick(v: View?) {
+                answerTextView.visibility = View.VISIBLE
+            }
+        })
     }
 }
