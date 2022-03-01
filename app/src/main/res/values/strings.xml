@@ -6,5 +6,5 @@
     <string name="help_text">Help</string>
     <string name="easy_button_title">Easy</string>
     <string name="doubt_button_title">Doubt</string>
-    <string name="difficult_button_title">Difficult</string>
+    <string name="difficult_button_title">Hard</string>
 </resources>
