@@ -18,10 +18,9 @@ class MainActivity : AppCompatActivity() {
         answerButton = findViewById(R.id.answer_button)
         answerTextView = findViewById(R.id.answer_text_view)
 
-        answerButton.setOnClickListener(object : View.OnClickListener {
-            override fun onClick(v: View?) {
-                answerTextView.visibility = View.VISIBLE
-            }
-        })
+        answerButton.setOnClickListener {
+            answerTextView.visibility = View.VISIBLE
+            answerButton.visibility = View.INVISIBLE
+        }
     }
 }
