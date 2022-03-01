@@ -72,14 +72,9 @@ open class Card(
         nextPracticeDate = currentDate.plusDays(interval).toString()
     }
 
-    /**Funcion para actualizar desde view*/
-    fun update_from_view(view: View) {
-        quality = when(view.id) {
-            R.id.easy_button -> 5
-            R.id.doubt_button -> 3
-            R.id.hard_button -> 0
-            else -> throw Exception("Unavailable quality")
-        }
+    /**Actualiza una tarjeta con la quality del argumento*/
+    fun update_card(quality: Int) {
+        this.quality = quality
         update(LocalDateTime.now())
     }
 

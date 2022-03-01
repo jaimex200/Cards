@@ -65,7 +65,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/difficult_button_title"
                 android:backgroundTint="@android:color/holo_red_light"
-                android:onClick="@{card::update_from_view}">
+                android:onClick="@{() -> card.update_card(0)}">
             </Button>
 
             <Button
@@ -74,7 +74,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/doubt_button_title"
                 android:backgroundTint="@android:color/holo_blue_light"
-                android:onClick="@{card::update_from_view}">
+                android:onClick="@{() -> card.update_card(3)}">
             </Button>
 
             <Button
@@ -83,7 +83,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/easy_button_title"
                 android:backgroundTint="@android:color/holo_green_light"
-                android:onClick="@{card::update_from_view}">
+                android:onClick="@{() -> card.update_card(5)}">
             </Button>
         </LinearLayout>
 
