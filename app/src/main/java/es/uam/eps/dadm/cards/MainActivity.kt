@@ -2,6 +2,7 @@ package es.uam.eps.dadm.cards
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.LinearLayout
@@ -10,6 +11,8 @@ import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import java.time.LocalDateTime
 import es.uam.eps.dadm.cards.databinding.ActivityMainBinding
+
+private const val TAG : String = "MainActivity"
 
 class MainActivity : AppCompatActivity() {
 
@@ -26,5 +29,7 @@ class MainActivity : AppCompatActivity() {
                 invalidateAll()
             }
         }
+
+        Log.d(TAG, "onCreate called")
     }
 }
