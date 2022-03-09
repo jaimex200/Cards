@@ -9,9 +9,8 @@ import timber.log.Timber
 private const val TAG : String = "MainActivity"
 
 class MainActivity : AppCompatActivity() {
-
-    private lateinit var binding: ActivityMainBinding
-    private var card: Card = Card("Tree", "Árbol")
+    lateinit var binding: ActivityMainBinding
+    var card = Card("Tree", "Árbol")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,7 +22,16 @@ class MainActivity : AppCompatActivity() {
                 invalidateAll()
             }
         }
-
         Timber.i("onCreate called")
+    }
+
+    override fun onStart() {
+        super.onStart()
+        Timber.i("onStart called")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Timber.i("onResume called")
     }
 }
