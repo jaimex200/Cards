@@ -49,4 +49,11 @@ class MainActivity : AppCompatActivity() {
         super.onDestroy()
         Timber.i("onDestroy called")
     }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        Timber.i("onSaveInstanceState called")
+        for (key in outState.keySet())
+            Timber.i("$key -> ${outState.get(key)} \n")
+    }
 }
