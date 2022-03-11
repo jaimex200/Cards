@@ -7,6 +7,7 @@ import es.uam.eps.dadm.cards.databinding.ActivityMainBinding
 import timber.log.Timber
 
 private const val TAG : String = "MainActivity"
+private const val ANSWERED_KEY = "es.uam.eps.dadm.cards:answered"
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
@@ -23,6 +24,10 @@ class MainActivity : AppCompatActivity() {
             }
         }
         Timber.i("onCreate called")
+        Timber.i("answered = ${savedInstanceState?.getBoolean(ANSWERED_KEY)}")
+
+        card.answered = savedInstanceState?.getBoolean(ANSWERED_KEY) ?: false
+        binding.invalidateAll()
     }
 
     override fun onStart() {
@@ -53,7 +58,6 @@ class MainActivity : AppCompatActivity() {
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
         Timber.i("onSaveInstanceState called")
-        for (key in outState.keySet())
-            Timber.i("$key -> ${outState.get(key)} \n")
+        outState.putBoolean(ANSWERED_KEY, card.answered)
     }
 }
