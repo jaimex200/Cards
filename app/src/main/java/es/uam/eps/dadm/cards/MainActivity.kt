@@ -13,6 +13,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private var card: Card = Card("Tree", "Árbol")
+    private var player: Player = Player()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,6 +33,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
+        player.start()
         Timber.i("onStart called")
     }
 
@@ -55,6 +57,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onStop() {
         super.onStop()
+        player.stop()
         Timber.i("onStop called")
     }
 
