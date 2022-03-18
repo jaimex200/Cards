@@ -1,26 +1,21 @@
 package es.uam.eps.dadm.cards
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
-import es.uam.eps.dadm.cards.databinding.ActivityMainBinding
 import timber.log.Timber
-
-private const val TAG : String = "MainActivity"
-private const val ANSWERED_KEY = "es.uam.eps.dadm.cards:answered"
+import es.uam.eps.dadm.cards.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
-
     lateinit var binding: ActivityMainBinding
-    private lateinit var viewModel: MainViewModel
+    private val viewModel: MainViewModel by lazy {
+        ViewModelProvider(this).get(MainViewModel::class.java)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
-
-        viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
-        Timber.i("$viewModel")
 
         binding.card = viewModel.card
         binding.answerButton.setOnClickListener {
@@ -38,7 +33,6 @@ class MainActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
         Timber.i("onResume called")
-        binding.invalidateAll()
     }
 
     override fun onPause() {
@@ -49,6 +43,16 @@ class MainActivity : AppCompatActivity() {
     override fun onStop() {
         super.onStop()
         Timber.i("onStop called")
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        Timber.i("onSaveInstanceState called")
+    }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        super.onRestoreInstanceState(savedInstanceState)
+        Timber.i("onRestoreInstanceState called")
     }
 
     override fun onDestroy() {
