@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
-        binding.card = viewModel.card
+        binding.viewModel = viewModel
         binding.answerButton.setOnClickListener {
             viewModel.card?.answered = true
             binding.invalidateAll()

@@ -53,6 +53,11 @@ open class Card(
         println("$question -> $answer")
     }
 
+    /**true si es dia de estudio*/
+    fun isDue(date: LocalDateTime): Boolean {
+        return date.toString().split('T')[0] == nextPracticeDate.split('T')[0]
+    }
+
     /**Funcion para ejecutar la tarjeta*/
     fun execCard (currentDate: LocalDateTime) {
         if (currentDate.toString().split('T')[0] == nextPracticeDate.split('T')[0]) {
