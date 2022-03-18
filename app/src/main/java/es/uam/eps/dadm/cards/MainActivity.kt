@@ -13,11 +13,9 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private var card: Card = Card("Tree", "Árbol")
-    private lateinit var player: Player
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        player = Player(this.lifecycle)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         binding.card = card
         binding.apply {
@@ -37,13 +35,6 @@ class MainActivity : AppCompatActivity() {
         Timber.i("onStart called")
     }
 
-    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
-        super.onRestoreInstanceState(savedInstanceState)
-        Timber.i("onRestoreInstanceState called")
-
-        card.answered = savedInstanceState?.getBoolean(ANSWERED_KEY) ?: false
-    }
-
     override fun onResume() {
         super.onResume()
         Timber.i("onResume called")
@@ -58,12 +49,6 @@ class MainActivity : AppCompatActivity() {
     override fun onStop() {
         super.onStop()
         Timber.i("onStop called")
-    }
-
-    override fun onSaveInstanceState(outState: Bundle) {
-        super.onSaveInstanceState(outState)
-        Timber.i("onSaveInstanceState called")
-        outState.putBoolean(ANSWERED_KEY, card.answered)
     }
 
     override fun onDestroy() {
