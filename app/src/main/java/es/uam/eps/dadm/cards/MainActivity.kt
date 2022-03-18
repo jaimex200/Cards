@@ -12,38 +12,20 @@ private const val ANSWERED_KEY = "es.uam.eps.dadm.cards:answered"
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-    private var card: Card = Card("Tree", "Árbol")
+    object Model {
+        var card: Card = Card("To wake up", "Despertarse")
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
-        binding.card = card
+        binding.card = Model.card
         binding.apply {
             answerButton.setOnClickListener {
                 card?.answered = true
                 invalidateAll()
             }
-
-            Timber.i("onCreate called")
         }
-        Timber.i("onCreate called")
-        Timber.i("answered = ${savedInstanceState?.getBoolean(ANSWERED_KEY)}")
-    }
-
-    override fun onStart() {
-        super.onStart()
-        Timber.i("onStart called")
-    }
-
-    override fun onResume() {
-        super.onResume()
-        Timber.i("onResume called")
-        binding.invalidateAll()
-    }
-
-    override fun onPause() {
-        super.onPause()
-        Timber.i("onPause called")
     }
 
     override fun onStop() {
