@@ -1,6 +1,8 @@
 package es.uam.eps.dadm.cards
 
 import android.os.Bundle
+import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
@@ -12,17 +14,39 @@ class MainActivity : AppCompatActivity() {
     private val viewModel: MainViewModel by lazy {
         ViewModelProvider(this).get(MainViewModel::class.java)
     }
+    private var listener = View.OnClickListener { v ->
+        // Asigna a quality el valor 0, 3 o 5,
+        // dependiendo del botón que se haya pulsado
+        val quality = when (v?.id) {
+            R.id.easy_button    -> 5
+            R.id.doubt_button   -> 3
+            else -> 0
+        }
 
+        // Llama al método update de viewModel
+        viewModel.update(quality)
+
+        // Si la propiedad card de viewModel es null
+        // informa al usuario mediante un Toast de que
+        // no quedan tarjetas que repasar
+        if (viewModel.card == null) {
+            Toast.makeText(this, "No quedan tarjetas para estudiar", Toast.LENGTH_LONG).show()
+        }
+
+        binding.invalidateAll()
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
-        binding.viewModel = viewModel
+        binding.mainViewModel = viewModel
         binding.answerButton.setOnClickListener {
-            viewModel.card?.answered = true
+            viewModel?.card?.answered = true
             binding.invalidateAll()
         }
-        Timber.i("onCreate called")
+
+        // Ajusta el escuchador listener a los botones de dificultad
+
     }
 
     override fun onStart() {
