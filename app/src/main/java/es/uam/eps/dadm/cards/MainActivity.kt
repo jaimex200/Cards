@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
         // informa al usuario mediante un Toast de que
         // no quedan tarjetas que repasar
         if (viewModel.card == null) {
-            Toast.makeText(this, "No quedan tarjetas para estudiar", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, resources.getString(R.string.no_cards_review), Toast.LENGTH_LONG).show()
         }
 
         binding.invalidateAll()
@@ -46,7 +46,9 @@ class MainActivity : AppCompatActivity() {
         }
 
         // Ajusta el escuchador listener a los botones de dificultad
-
+        binding.doubtButton.setOnClickListener(listener)
+        binding.easyButton.setOnClickListener(listener)
+        binding.hardButton.setOnClickListener(listener)
     }
 
     override fun onStart() {

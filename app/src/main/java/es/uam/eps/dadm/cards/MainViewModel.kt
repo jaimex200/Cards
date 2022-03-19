@@ -5,11 +5,9 @@ import java.time.LocalDateTime
 
 class MainViewModel: ViewModel() {
     var card: Card? = null
-    private var cards: MutableList<Card> = mutableListOf<Card>()
+    private var cards: MutableList<Card> = CardsApplication.cards
 
     init {
-        cards.add(Card("To wake up", "Despertarse"))
-        cards.add(Card("To rule out", "Descartar"))
         card = random_card()
     }
 
