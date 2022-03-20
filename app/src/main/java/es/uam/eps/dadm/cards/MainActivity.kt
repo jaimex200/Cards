@@ -34,9 +34,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
-        viewModel.nDueCards.observe(this, Observer<Int> {
-                t -> binding.infoTextView?.text = t.toString() }
-        )
 
         binding.mainViewModel = viewModel
         binding.answerButton.setOnClickListener {
