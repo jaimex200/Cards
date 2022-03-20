@@ -5,6 +5,7 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import timber.log.Timber
 import es.uam.eps.dadm.cards.databinding.ActivityMainBinding
@@ -15,20 +16,14 @@ class MainActivity : AppCompatActivity() {
         ViewModelProvider(this).get(MainViewModel::class.java)
     }
     private var listener = View.OnClickListener { v ->
-        // Asigna a quality el valor 0, 3 o 5,
-        // dependiendo del botón que se haya pulsado
         val quality = when (v?.id) {
             R.id.easy_button    -> 5
             R.id.doubt_button   -> 3
             else -> 0
         }
 
-        // Llama al método update de viewModel
         viewModel.update(quality)
 
-        // Si la propiedad card de viewModel es null
-        // informa al usuario mediante un Toast de que
-        // no quedan tarjetas que repasar
         if (viewModel.card == null) {
             Toast.makeText(this, resources.getString(R.string.no_cards_review), Toast.LENGTH_LONG).show()
         }
@@ -37,7 +32,11 @@ class MainActivity : AppCompatActivity() {
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+        viewModel.nDueCards.observe(this, Observer<Int> {
+                t -> binding.infoTextView?.text = t.toString() }
+        )
 
         binding.mainViewModel = viewModel
         binding.answerButton.setOnClickListener {
@@ -49,6 +48,8 @@ class MainActivity : AppCompatActivity() {
         binding.doubtButton.setOnClickListener(listener)
         binding.easyButton.setOnClickListener(listener)
         binding.hardButton.setOnClickListener(listener)
+
+
     }
 
     override fun onStart() {

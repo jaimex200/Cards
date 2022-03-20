@@ -15,6 +15,15 @@
         android:visibility="@{mainViewModel.card == null ? View.INVISIBLE : View.VISIBLE}">
 
         <TextView
+            android:id="@+id/info_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="@string/info_text_view_message"
+            android:textSize="20sp"
+            tools:text="@string/info_text_view_message" />
+
+        <TextView
             android:id="@+id/question_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
