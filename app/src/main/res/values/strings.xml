@@ -9,4 +9,5 @@
     <string name="difficult_button_title">Hard</string>
     <string name="no_cards_review">No cards to review</string>
     <string name="info_text_view_message">Number of cards remaining</string>
+    <string name="due_cards_format">%d cards remaining</string>
 </resources>

@@ -10,4 +10,5 @@
     <string name="difficult_button_title">Dificil</string>
     <string name="no_cards_review">Ninguna tarjeta para repasar</string>
     <string name="info_text_view_message">Numero de tarjetas restantes</string>
+    <string name="due_cards_format">quedan %d tarjetas</string>
 </resources>
