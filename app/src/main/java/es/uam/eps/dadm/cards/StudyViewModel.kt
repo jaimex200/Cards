@@ -5,7 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import java.time.LocalDateTime
 
-class MainViewModel: ViewModel() {
+class StudyViewModel: ViewModel() {
     var card: Card? = null
     private var cards: MutableList<Card> = CardsApplication.cards
     val nDueCards: LiveData<Int>

@@ -11,41 +11,9 @@ import timber.log.Timber
 
 class StudyActivity : AppCompatActivity() {
     lateinit var binding: ActivityStudyBinding
-    private val viewModel: MainViewModel by lazy {
-        ViewModelProvider(this).get(MainViewModel::class.java)
-    }
-    private var listener = View.OnClickListener { v ->
-        val quality = when (v?.id) {
-            R.id.easy_button    -> 5
-            R.id.doubt_button   -> 3
-            else -> 0
-        }
-
-        viewModel.update(quality)
-
-        if (viewModel.card == null) {
-            Toast.makeText(this, resources.getString(R.string.no_cards_review), Toast.LENGTH_LONG).show()
-        }
-
-        binding.invalidateAll()
-    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         binding = DataBindingUtil.setContentView(this, R.layout.activity_study)
-
-        binding.mainViewModel = viewModel
-        binding.answerButton?.setOnClickListener {
-            viewModel?.card?.answered = true
-            binding.invalidateAll()
-        }
-
-        // Ajusta el escuchador listener a los botones de dificultad
-        binding.doubtButton?.setOnClickListener(listener)
-        binding.easyButton?.setOnClickListener(listener)
-        binding.hardButton?.setOnClickListener(listener)
-
-
     }
 
     override fun onStart() {
