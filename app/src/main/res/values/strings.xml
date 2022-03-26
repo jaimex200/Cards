@@ -10,4 +10,6 @@
     <string name="no_cards_review">No cards to review</string>
     <string name="info_text_view_message">Number of cards remaining</string>
     <string name="due_cards_format">%d cards remaining</string>
+    <string name="subtitle_text">Tap to study</string>
+    <string name="title_text">Cards</string>
 </resources>
