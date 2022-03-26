@@ -5,13 +5,12 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import es.uam.eps.dadm.cards.databinding.ActivityStudyBinding
 import timber.log.Timber
-import es.uam.eps.dadm.cards.databinding.ActivityMainBinding
 
-class MainActivity : AppCompatActivity() {
-    lateinit var binding: ActivityMainBinding
+class StudyActivity : AppCompatActivity() {
+    lateinit var binding: ActivityStudyBinding
     private val viewModel: MainViewModel by lazy {
         ViewModelProvider(this).get(MainViewModel::class.java)
     }
@@ -33,18 +32,18 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_study)
 
         binding.mainViewModel = viewModel
-        binding.answerButton.setOnClickListener {
+        binding.answerButton?.setOnClickListener {
             viewModel?.card?.answered = true
             binding.invalidateAll()
         }
 
         // Ajusta el escuchador listener a los botones de dificultad
-        binding.doubtButton.setOnClickListener(listener)
-        binding.easyButton.setOnClickListener(listener)
-        binding.hardButton.setOnClickListener(listener)
+        binding.doubtButton?.setOnClickListener(listener)
+        binding.easyButton?.setOnClickListener(listener)
+        binding.hardButton?.setOnClickListener(listener)
 
 
     }

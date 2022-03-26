@@ -1,31 +1,15 @@
-<?xml version="1.0" encoding="utf-8"?>
-<layout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
-    <RelativeLayout
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/grey_dark">
+        android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/cards_title_text_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/title_text"
-            android:textSize="50dp"
-            android:textColor="@color/grey_light"
-            android:layout_centerInParent="true"
-            tools:text="Title text"/>
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/titleFragment"
+            android:name="es.uam.eps.dadm.cards.TitleFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
 
-        <TextView
-            android:layout_below="@id/cards_title_text_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/subtitle_text"
-            android:textColor="@color/grey_light"
-            android:textSize="15dp"
-            android:layout_centerHorizontal="true"
-            tools:text="Subtitle text"/>
-
-    </RelativeLayout>
 </layout>

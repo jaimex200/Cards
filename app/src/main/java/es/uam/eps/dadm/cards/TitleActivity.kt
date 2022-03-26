@@ -12,10 +12,6 @@ class TitleActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_title)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_title)
-        binding.cardsTitleTextView.setOnClickListener {
-            startActivity(Intent(this, MainActivity::class.java))
-        }
     }
 }

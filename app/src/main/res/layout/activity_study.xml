@@ -19,7 +19,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:text="@{@string/due_cards_format(mainViewModel.nDueCards)}"
+            android:text="@{mainViewModel.nDueCards.toString()}"
             android:textSize="20sp"
             tools:text="@string/info_text_view_message" />
 
