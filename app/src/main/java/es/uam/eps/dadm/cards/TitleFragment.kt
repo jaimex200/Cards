@@ -1,5 +1,6 @@
 package es.uam.eps.dadm.cards
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,6 +11,22 @@ import androidx.fragment.app.Fragment
 import es.uam.eps.dadm.cards.databinding.FragmentTitleBinding
 
 class TitleFragment: Fragment() {
+    interface OnTitleFragmentInteractionListener {
+        fun onStudy()
+    }
+
+    var listener: OnTitleFragmentInteractionListener? = null
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        listener = context as OnTitleFragmentInteractionListener?
+    }
+
+    override fun onDetach() {
+        super.onDetach()
+        listener = null
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -22,13 +39,7 @@ class TitleFragment: Fragment() {
             false)
 
         binding.cardsTitleTextView.setOnClickListener {
-            val fragment = StudyFragment()
-
-            activity?.supportFragmentManager
-                ?.beginTransaction()
-                ?.replace(R.id.fragment_container, fragment)
-                ?.addToBackStack(null)
-                ?.commit()
+            listener?.onStudy()
         }
 
         return binding.root

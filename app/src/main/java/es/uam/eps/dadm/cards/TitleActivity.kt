@@ -5,8 +5,18 @@ import android.os.Bundle
 import androidx.databinding.DataBindingUtil
 import es.uam.eps.dadm.cards.databinding.ActivityTitleBinding
 
-class TitleActivity : AppCompatActivity() {
+class TitleActivity : AppCompatActivity(), TitleFragment.OnTitleFragmentInteractionListener {
     lateinit var binding: ActivityTitleBinding
+
+    override fun onStudy() {
+        val fragment = StudyFragment()
+
+        supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.fragment_container, StudyFragment())
+            .commit()
+
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,6 +32,7 @@ class TitleActivity : AppCompatActivity() {
             supportFragmentManager
                 .beginTransaction()
                 .add(R.id.fragment_container, fragment)
+                .addToBackStack(null)
                 .commit()
         }
     }
