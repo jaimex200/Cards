@@ -22,7 +22,12 @@ class TitleFragment: Fragment() {
             false)
 
         binding.cardsTitleTextView.setOnClickListener {
-            startActivity(Intent(activity, StudyActivity::class.java))
+            val fragment = StudyFragment()
+
+            activity?.supportFragmentManager
+                ?.beginTransaction()
+                ?.replace(R.id.fragment_container, fragment)
+                ?.commit()
         }
 
         return binding.root

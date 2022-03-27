@@ -13,11 +13,16 @@ class TitleActivity : AppCompatActivity() {
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_title)
 
-        val fragment = TitleFragment()
+        var fragment = supportFragmentManager
+            .findFragmentById(R.id.fragment_container)
 
-        supportFragmentManager
-            .beginTransaction()
-            .add(R.id.fragment_container, fragment)
-            .commit()
+        if (fragment == null){
+            fragment = TitleFragment()
+
+            supportFragmentManager
+                .beginTransaction()
+                .add(R.id.fragment_container, fragment)
+                .commit()
+        }
     }
 }
