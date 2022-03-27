@@ -1,6 +1,5 @@
 package es.uam.eps.dadm.cards
 
-import android.view.View
 import java.time.*
 import java.util.UUID
 import kotlin.math.roundToLong

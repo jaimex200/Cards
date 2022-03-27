@@ -1,11 +1,8 @@
 package es.uam.eps.dadm.cards
 
 import android.os.Bundle
-import android.view.View
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.ViewModelProvider
 import es.uam.eps.dadm.cards.databinding.ActivityStudyBinding
 import timber.log.Timber
 

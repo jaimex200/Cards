@@ -1,9 +1,7 @@
 package es.uam.eps.dadm.cards
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.TextView
 import androidx.databinding.DataBindingUtil
 import es.uam.eps.dadm.cards.databinding.ActivityTitleBinding
 
