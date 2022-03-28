@@ -14,6 +14,7 @@ class TitleActivity : AppCompatActivity(), TitleFragment.OnTitleFragmentInteract
         supportFragmentManager
             .beginTransaction()
             .replace(R.id.fragment_container, StudyFragment())
+            .addToBackStack("onStudy")
             .commit()
 
     }
