@@ -11,19 +11,23 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import es.uam.eps.dadm.cards.databinding.FragmentCardListBinding
 
-class CardListFragment: Fragment(){
-    lateinit var binding: FragmentCardListBinding
+class CardListFragment: Fragment() {
+    private lateinit var adapter: CardAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        binding = DataBindingUtil.inflate<FragmentCardListBinding>(
+    ): View {
+        val binding = DataBindingUtil.inflate<FragmentCardListBinding>(
             inflater,
             R.layout.fragment_card_list,
             container,
-            false)
+            false
+        )
+        adapter = CardAdapter()
+        adapter.data = CardsApplication.cards
+        binding.cardListRecyclerView?.adapter = adapter
 
         binding.cardListStudyButton.setOnClickListener { view ->
             if (CardsApplication.numberOfDueCards() > 0)
