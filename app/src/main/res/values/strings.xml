@@ -14,4 +14,10 @@
     <string name="title_text">Cards</string>
     <string name="no_more_cards_toast_message">No more cards</string>
     <string name="review_card_button_title">Review cards</string>
+    <string name="question_card_edit_text">Question</string>
+    <string name="answer_card_edit_text">Answer</string>
+    <string name="question_card_edit_default">Write the question text</string>
+    <string name="answer_card_edit_default">Write the answer text</string>
+    <string name="accept_button_text">Accept</string>
+    <string name="cancel_button_text">Cancel</string>
 </resources>

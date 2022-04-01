@@ -28,5 +28,13 @@
             android:id="@+id/action_cardListFragment_to_studyFragment"
             app:destination="@id/studyFragment"
             app:launchSingleTop="false" />
+        <action
+            android:id="@+id/action_cardListFragment_to_cardEditFragment"
+            app:destination="@id/cardEditFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/cardEditFragment"
+        android:name="es.uam.eps.dadm.cards.CardEditFragment"
+        android:label="CardEditFragment"
+        tools:layout="@layout/fragment_card_edit"/>
 </navigation>
