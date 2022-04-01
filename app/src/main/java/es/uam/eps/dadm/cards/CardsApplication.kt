@@ -17,5 +17,9 @@ class CardsApplication: Application() {
 
     companion object {
         var cards: MutableList<Card> = mutableListOf<Card>()
+
+        fun numberOfDueCards (): Int {
+            return cards.size
+        }
     }
 }

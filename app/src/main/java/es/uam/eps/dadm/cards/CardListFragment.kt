@@ -1,7 +1,5 @@
 package es.uam.eps.dadm.cards
 
-import android.content.Context
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,27 +7,28 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
-import es.uam.eps.dadm.cards.databinding.FragmentTitleBinding
+import es.uam.eps.dadm.cards.databinding.FragmentCardListBinding
 
-class TitleFragment: Fragment() {
+class CardListFragment: Fragment(){
+    lateinit var binding: FragmentCardListBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
-        val binding = DataBindingUtil.inflate<FragmentTitleBinding>(
+    ): View? {
+        binding = DataBindingUtil.inflate<FragmentCardListBinding>(
             inflater,
-            R.layout.fragment_title,
+            R.layout.fragment_card_list,
             container,
-            false
-        )
+            false)
 
-        binding.cardsTitleTextView.setOnClickListener { view ->
+        binding.cardListStudyButton.setOnClickListener { view ->
             if (CardsApplication.numberOfDueCards() > 0)
                 view.findNavController()
-                    .navigate(R.id.action_titleFragment_to_cardListFragment)
+                    .navigate(R.id.action_cardListFragment_to_studyFragment)
             else
                 Toast.makeText(
                     requireActivity(),

@@ -13,4 +13,6 @@
     <string name="due_cards_format">quedan %d tarjetas</string>
     <string name="subtitle_text">Toca para estudiar</string>
     <string name="title_text">Tarjetas</string>
+    <string name="no_more_cards_toast_message">Ninguna tarjeta mas</string>
+    <string name="review_card_button_title">Estudiar tarjetas</string>
 </resources>
