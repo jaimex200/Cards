@@ -8,12 +8,11 @@ xmlns:app="http://schemas.android.com/apk/res-auto">
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/cards_list_text_view"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/card_list_recycler_view"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="20dp"
-            android:text="lista"/>
+            android:layout_height="match_parent"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
 
         <Button
             android:id="@+id/card_list_study_button"
