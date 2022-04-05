@@ -62,15 +62,15 @@ class CardEditFragment : Fragment() {
             }
         }
 
-        binding.cardEditQuestionEdit.addTextChangedListener(questionTextWatcher)
-        binding.cardEditAnswerEdit.addTextChangedListener(questionTextWatcher)
+        binding.questionEditText.addTextChangedListener(questionTextWatcher)
+        binding.answerEditText.addTextChangedListener(questionTextWatcher)
 
-        binding.cardEditAcceptEdit.setOnClickListener{
+        binding.acceptCardEditButton.setOnClickListener{
             view?.findNavController()
                 ?.navigate(R.id.action_cardEditFragment_to_cardListFragment)
         }
 
-        binding.cardEditCancelEdit.setOnClickListener{
+        binding.cancelCardEditButton.setOnClickListener{
             card.answer = answer
             card.question = question
 

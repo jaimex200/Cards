@@ -8,9 +8,9 @@ class CardsApplication: Application() {
     init {
         cards.add(Card("To wake up", "Despertarse"))
         cards.add(Card("To rule out", "Descartar"))
-        for (i in 1..100){
+        /*for (i in 1..100){
             cards.add(Card("card question $i", "card answer $i"))
-        }
+        }*/
     }
 
     override fun onCreate() {
@@ -32,6 +32,10 @@ class CardsApplication: Application() {
                 }
             }
             return null
+        }
+
+        fun addCard(card: Card) {
+            cards.add(card)
         }
     }
 }

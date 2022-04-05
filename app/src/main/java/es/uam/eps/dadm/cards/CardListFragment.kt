@@ -28,22 +28,12 @@ class CardListFragment: Fragment() {
         )
         adapter = CardAdapter()
         adapter.data = CardsApplication.cards
-        binding.cardListRecyclerView?.adapter = adapter
-/*
-        binding.cardListStudyButton.setOnClickListener { view ->
-            if (CardsApplication.numberOfDueCards() > 0)
-                view.findNavController()
-                    .navigate(R.id.action_cardListFragment_to_studyFragment)
-            else
-                Toast.makeText(
-                    requireActivity(),
-                    R.string.no_more_cards_toast_message,
-                    Toast.LENGTH_LONG
-                ).show()
-        }*/
+        binding.cardListRecyclerView.adapter = adapter
 
-        binding.newCardFab.setOnClickListener{
-            Snackbar.make(it, resources.getString(R.string.added_card), Snackbar.LENGTH_SHORT).show()
+        binding.newCardFab.setOnClickListener {
+            val card = Card("","")
+            CardsApplication.addCard(card)
+            it.findNavController().navigate(CardListFragmentDirections.actionCardListFragmentToCardEditFragment(card.id))
         }
 
         return binding.root

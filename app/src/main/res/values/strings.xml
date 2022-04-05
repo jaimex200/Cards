@@ -22,4 +22,7 @@
     <string name="cancel_button_text">Cancel</string>
     <string name="new_card_fab_description">Add card</string>
     <string name="added_card">Added card</string>
+    <string name="decks_nav_menu_title">Decks</string>
+    <string name="study_nav_menu_title">Review Cards</string>
+    <string name="statistics_nav_menu_title">Stadistics</string>
 </resources>
