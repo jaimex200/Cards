@@ -9,6 +9,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
+import com.google.android.material.snackbar.Snackbar
 import es.uam.eps.dadm.cards.databinding.FragmentCardListBinding
 
 class CardListFragment: Fragment() {
@@ -40,6 +41,10 @@ class CardListFragment: Fragment() {
                     Toast.LENGTH_LONG
                 ).show()
         }*/
+
+        binding.newCardFab.setOnClickListener{
+            Snackbar.make(it, resources.getString(R.string.added_card), Snackbar.LENGTH_SHORT).show()
+        }
 
         return binding.root
     }

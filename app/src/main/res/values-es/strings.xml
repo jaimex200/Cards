@@ -22,4 +22,5 @@
     <string name="accept_button_text">Aceptar</string>
     <string name="cancel_button_text">Cancelar</string>
     <string name="new_card_fab_description">Añadir tarjeta</string>
+    <string name="added_card">Tarjeta añadida</string>
 </resources>

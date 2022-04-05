@@ -1,45 +1,61 @@
-<?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto">
+
     <data>
         <variable
             name="card"
             type="es.uam.eps.dadm.cards.Card" />
     </data>
 
-    <RelativeLayout
+    <com.google.android.material.card.MaterialCardView
+        style="@style/Widget.MaterialComponents.CardView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingLeft="16dp"
-        android:paddingTop="10dp"
-        android:paddingRight="16dp"
-        android:paddingBottom="10dp">
+        android:layout_marginLeft="@dimen/mtrl_card_spacing"
+        android:layout_marginTop="@dimen/mtrl_card_spacing"
+        android:layout_marginRight="@dimen/mtrl_card_spacing"
+        app:cardBackgroundColor="@color/cardview_light_background">
 
-        <TextView
-            android:id="@+id/list_item_question"
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:textColor="@color/purple_500"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:text="@{card.question}"/>
+            android:paddingLeft="16dp"
+            android:paddingTop="10dp"
+            android:paddingRight="16dp"
+            android:paddingBottom="10dp">
 
-        <TextView
-            android:id="@+id/list_item_answer"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/list_item_question"
-            android:textColor="@color/purple_500"
-            android:textSize="16sp"
-            android:text="@{card.answer}"/>
+            <TextView
+                android:id="@+id/list_item_question"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:textColor="@color/purple_500"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:text="@{card.question}"
+                android:textAppearance="?attr/textAppearanceHeadline6"/>
 
-        <TextView
-            android:id="@+id/list_item_date"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentEnd="true"
-            android:text="@{card.date}"/>
+            <TextView
+                android:id="@+id/list_item_answer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/list_item_question"
+                android:textColor="@color/purple_500"
+                android:textSize="16sp"
+                android:text="@{card.answer}"
+                android:textAppearance="?attr/textAppearanceBody2" />
 
-    </RelativeLayout>
+            <TextView
+                android:id="@+id/list_item_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:text="@{card.date.substring(0,10)}"
+                android:textAppearance="?attr/textAppearanceBody2"/>
+
+        </RelativeLayout>
+    </com.google.android.material.card.MaterialCardView>
 </layout>
