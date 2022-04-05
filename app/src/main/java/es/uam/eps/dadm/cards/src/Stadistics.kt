@@ -1,4 +1,4 @@
-package es.uam.eps.dadm.cards
+package es.uam.eps.dadm.cards.src
 
 object Stadistics {
     var success: Int = 0
@@ -7,7 +7,7 @@ object Stadistics {
     var listCards: MutableList<Card> = mutableListOf()
     fun show () {
 
-        if (success != 0) println("Porcentaje de aciertos: ${(success.toDouble()/(success+error+doubt))*100}%") else println("Porcentaje de aciertos: 0%" )
+        if (success != 0) println("Porcentaje de aciertos: ${(success.toDouble()/(success + error + doubt))*100}%") else println("Porcentaje de aciertos: 0%" )
 
         println("Tarjetas mas dificiles")
         for (c in listCards) {

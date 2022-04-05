@@ -1,4 +1,4 @@
-package es.uam.eps.dadm.cards
+package es.uam.eps.dadm.cards.src
 
 import java.time.*
 import java.util.UUID

@@ -26,4 +26,10 @@
     <string name="statistics_nav_menu_title">Estadisticas</string>
     <string name="study_nav_menu_title">Repasar tarjetas</string>
     <string name="decks_nav_menu_title">Mazos</string>
+    <string name="about_nav_menu_title">Acerca de</string>
+    <string name="new_deck_fab_description">Nuevo Mazo</string>
+    <string name="name_deck_edit_text">Nombre</string>
+    <string name="name_deck_edit_default">Nombre del mazo</string>
+    <string name="title_deck_text">Mazos</string>
+    <string name="title_card_text">Tarjetas</string>
 </resources>

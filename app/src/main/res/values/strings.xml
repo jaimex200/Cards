@@ -25,4 +25,10 @@
     <string name="decks_nav_menu_title">Decks</string>
     <string name="study_nav_menu_title">Review Cards</string>
     <string name="statistics_nav_menu_title">Stadistics</string>
+    <string name="about_nav_menu_title">About</string>
+    <string name="new_deck_fab_description">New deck</string>
+    <string name="name_deck_edit_text">Name</string>
+    <string name="name_deck_edit_default">Name of the deck</string>
+    <string name="title_deck_text">Decks</string>
+    <string name="title_card_text">Cards</string>
 </resources>

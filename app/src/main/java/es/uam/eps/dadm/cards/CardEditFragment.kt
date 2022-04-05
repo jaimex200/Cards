@@ -10,10 +10,12 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
 import es.uam.eps.dadm.cards.databinding.FragmentCardEditBinding
-import es.uam.eps.dadm.cards.databinding.FragmentStudyBinding
+import es.uam.eps.dadm.cards.src.Card
+import timber.log.Timber
 
 class CardEditFragment : Fragment() {
     lateinit var binding: FragmentCardEditBinding
+    lateinit var deckid: String
     lateinit var card: Card
     lateinit var question: String
     lateinit var answer: String
@@ -30,11 +32,12 @@ class CardEditFragment : Fragment() {
         )
 
         val args = CardEditFragmentArgs.fromBundle(requireArguments())
-        card = CardsApplication.getCard(args.cardid) ?: throw Exception("Wrong id")
+        card = CardsApplication.getCard(args.cardid, args.deckid) ?: throw Exception("Wrong id")
         binding.card = card
 
         question = card.question
         answer = card.answer
+        deckid = args.deckid
 
         return binding.root
     }
@@ -63,19 +66,20 @@ class CardEditFragment : Fragment() {
         }
 
         binding.questionEditText.addTextChangedListener(questionTextWatcher)
-        binding.answerEditText.addTextChangedListener(questionTextWatcher)
+        binding.answerEditText.addTextChangedListener(answerTextWatcher)
 
         binding.acceptCardEditButton.setOnClickListener{
             view?.findNavController()
-                ?.navigate(R.id.action_cardEditFragment_to_cardListFragment)
+                ?.navigate(CardEditFragmentDirections.actionCardEditFragmentToCardListFragment(deckid))
         }
+
 
         binding.cancelCardEditButton.setOnClickListener{
             card.answer = answer
             card.question = question
 
             view?.findNavController()
-                ?.navigate(R.id.action_cardEditFragment_to_cardListFragment)
+                ?.navigate(CardEditFragmentDirections.actionCardEditFragmentToCardListFragment(deckid))
         }
     }
 }

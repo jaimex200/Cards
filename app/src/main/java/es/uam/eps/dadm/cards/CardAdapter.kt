@@ -3,22 +3,23 @@ package es.uam.eps.dadm.cards
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import es.uam.eps.dadm.cards.databinding.ListItemCardBinding
+import es.uam.eps.dadm.cards.src.Card
 
 class CardAdapter : RecyclerView.Adapter<CardAdapter.CardHolder>() {
     lateinit var binding: ListItemCardBinding
     var data = listOf<Card>()
+    lateinit var dataDeck: String
 
     inner class CardHolder(view: View) : RecyclerView.ViewHolder(view) {
         private var local = binding
-        fun bind(card: Card) {
+        fun bind(card: Card, deckid: String) {
             local.card = card
             itemView.setOnClickListener {
                 it.findNavController()
-                    .navigate(CardListFragmentDirections.actionCardListFragmentToCardEditFragment(card.id))
+                    .navigate(CardListFragmentDirections.actionCardListFragmentToCardEditFragment(card.id, deckid))
             }
         }
     }
@@ -32,6 +33,6 @@ class CardAdapter : RecyclerView.Adapter<CardAdapter.CardHolder>() {
     override fun getItemCount() = data.size
 
     override fun onBindViewHolder(holder: CardHolder, position: Int) {
-        holder.bind(data[position])
+        holder.bind(data[position], dataDeck)
     }
 }

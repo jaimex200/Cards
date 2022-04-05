@@ -11,8 +11,8 @@
         android:label="TitleFragment"
         tools:layout="@layout/fragment_title">
         <action
-            android:id="@+id/action_titleFragment_to_cardListFragment"
-            app:destination="@id/cardListFragment" />
+            android:id="@+id/action_titleFragment_to_deckListFragment"
+            app:destination="@id/deckListFragment" />
     </fragment>
     <fragment
         android:id="@+id/studyFragment"
@@ -31,6 +31,9 @@
         <action
             android:id="@+id/action_cardListFragment_to_cardEditFragment"
             app:destination="@id/cardEditFragment" />
+        <argument
+            android:name="deckid"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/cardEditFragment"
@@ -44,11 +47,38 @@
             android:id="@+id/action_cardEditFragment_to_cardListFragment"
             app:destination="@id/cardListFragment"
             app:popUpTo="@id/cardListFragment"
-            app:popUpToInclusive="false" />
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="deckid"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/aboutFragment"
         android:name="es.uam.eps.dadm.cards.AboutFragment"
         android:label="AboutFragment"
         tools:layout="@layout/fragment_about"/>
+    <fragment
+        android:id="@+id/deckListFragment"
+        android:name="es.uam.eps.dadm.cards.DeckListFragment"
+        android:label="DeckListFragment"
+        tools:layout="@layout/fragment_deck_list">
+        <action
+            android:id="@+id/action_deckListFragment_to_cardListFragment"
+            app:destination="@id/cardListFragment" />
+        <action
+            android:id="@+id/action_deckListFragment_to_deckEditFragment"
+            app:destination="@id/deckEditFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/deckEditFragment"
+        android:name="es.uam.eps.dadm.cards.DeckEditFragment"
+        android:label="DeckEditFragment"
+        tools:layout="@layout/fragment_deck_edit">
+        <argument
+            android:name="deckid"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_deckEditFragment_to_deckListFragment"
+            app:destination="@id/deckListFragment" />
+    </fragment>
 </navigation>

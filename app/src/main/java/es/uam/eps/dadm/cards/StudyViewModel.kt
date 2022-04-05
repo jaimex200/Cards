@@ -3,6 +3,7 @@ package es.uam.eps.dadm.cards
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import es.uam.eps.dadm.cards.src.Card
 import java.time.LocalDateTime
 
 class StudyViewModel: ViewModel() {

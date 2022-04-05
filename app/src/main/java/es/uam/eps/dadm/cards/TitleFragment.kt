@@ -27,15 +27,8 @@ class TitleFragment: Fragment() {
         )
 
         binding.cardsTitleTextView.setOnClickListener { view ->
-            if (CardsApplication.numberOfDueCards() > 0)
-                view.findNavController()
-                    .navigate(R.id.action_titleFragment_to_cardListFragment)
-            else
-                Toast.makeText(
-                    requireActivity(),
-                    R.string.no_more_cards_toast_message,
-                    Toast.LENGTH_LONG
-                ).show()
+            view.findNavController()
+                .navigate(R.id.action_titleFragment_to_deckListFragment)
         }
 
         return binding.root
