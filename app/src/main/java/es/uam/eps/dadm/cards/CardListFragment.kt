@@ -28,7 +28,7 @@ class CardListFragment: Fragment() {
         adapter = CardAdapter()
         adapter.data = CardsApplication.cards
         binding.cardListRecyclerView?.adapter = adapter
-
+/*
         binding.cardListStudyButton.setOnClickListener { view ->
             if (CardsApplication.numberOfDueCards() > 0)
                 view.findNavController()
@@ -39,7 +39,7 @@ class CardListFragment: Fragment() {
                     R.string.no_more_cards_toast_message,
                     Toast.LENGTH_LONG
                 ).show()
-        }
+        }*/
 
         return binding.root
     }
