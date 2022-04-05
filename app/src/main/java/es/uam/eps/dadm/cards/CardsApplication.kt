@@ -24,5 +24,14 @@ class CardsApplication: Application() {
         fun numberOfDueCards (): Int {
             return cards.size
         }
+
+        fun getCard(cardid: String): Card? {
+            for (card in cards) {
+                if (card.id == cardid) {
+                    return card
+                }
+            }
+            return null
+        }
     }
 }

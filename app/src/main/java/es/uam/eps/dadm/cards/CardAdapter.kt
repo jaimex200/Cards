@@ -16,9 +16,9 @@ class CardAdapter : RecyclerView.Adapter<CardAdapter.CardHolder>() {
         private var local = binding
         fun bind(card: Card) {
             local.card = card
-            itemView.setOnClickListener { view ->
-                view.findNavController()
-                    .navigate(R.id.action_cardListFragment_to_cardEditFragment)
+            itemView.setOnClickListener {
+                it.findNavController()
+                    .navigate(CardListFragmentDirections.actionCardListFragmentToCardEditFragment(card.id))
             }
         }
     }
