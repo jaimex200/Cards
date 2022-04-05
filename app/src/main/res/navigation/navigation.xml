@@ -44,6 +44,11 @@
             android:id="@+id/action_cardEditFragment_to_cardListFragment"
             app:destination="@id/cardListFragment"
             app:popUpTo="@id/cardListFragment"
-            app:popUpToInclusive="true" />
+            app:popUpToInclusive="false" />
     </fragment>
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="es.uam.eps.dadm.cards.AboutFragment"
+        android:label="AboutFragment"
+        tools:layout="@layout/fragment_about"/>
 </navigation>
