@@ -38,6 +38,10 @@ class CardListFragment: Fragment() {
             it.findNavController().navigate(CardListFragmentDirections.actionCardListFragmentToCardEditFragment(card.id, deckid))
         }
 
+        binding.studyDeckFab.setOnClickListener {
+            it.findNavController().navigate(CardListFragmentDirections.actionCardListFragmentToStudyFragment(deckid))
+        }
+
         return binding.root
     }
 }

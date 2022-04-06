@@ -22,9 +22,8 @@ class DeckAdapter: RecyclerView.Adapter<DeckAdapter.DeckHolder>() {
                     .navigate(DeckListFragmentDirections.actionDeckListFragmentToDeckEditFragment(deck.id))
             }
             itemView.setOnClickListener {
-                if (deck.cards.size > 0)
-                    it.findNavController()
-                        .navigate(DeckListFragmentDirections.actionDeckListFragmentToCardListFragment(deck.id))
+                it.findNavController()
+                    .navigate(DeckListFragmentDirections.actionDeckListFragmentToCardListFragment(deck.id))
             }
         }
     }

@@ -15,6 +15,14 @@ object Stadistics {
         }
     }
 
+    fun getThis(): Stadistics {
+        return this
+    }
+
+    fun getInfo(): String {
+        return success.toString()
+    }
+
     fun addSuccess () {
         success += 1
     }

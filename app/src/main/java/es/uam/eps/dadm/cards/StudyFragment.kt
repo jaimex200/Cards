@@ -4,10 +4,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.google.android.material.snackbar.Snackbar
 import es.uam.eps.dadm.cards.databinding.FragmentStudyBinding
+import timber.log.Timber
 
 class StudyFragment: Fragment() {
     lateinit var binding:  FragmentStudyBinding
@@ -25,7 +28,7 @@ class StudyFragment: Fragment() {
         viewModel.update(quality)
 
         if (viewModel.card == null) {
-            //Toast.makeText(this, resources.getString(R.string.no_cards_review), Toast.LENGTH_LONG).show()
+            Snackbar.make(v, resources.getString(R.string.no_cards_review), Snackbar.LENGTH_SHORT).show()
         }
 
         binding.invalidateAll()
@@ -41,6 +44,9 @@ class StudyFragment: Fragment() {
             R.layout.fragment_study,
             container,
             false)
+        var args = StudyFragmentArgs.fromBundle(requireArguments())
+        viewModel.updateList(args.deckid)
+        viewModel.initValues()
 
         binding.mainViewModel = viewModel
         binding.answerButton.setOnClickListener {

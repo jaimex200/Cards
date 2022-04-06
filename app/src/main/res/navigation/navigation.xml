@@ -18,7 +18,11 @@
         android:id="@+id/studyFragment"
         android:name="es.uam.eps.dadm.cards.StudyFragment"
         android:label="StudyFragment"
-        tools:layout="@layout/fragment_study"/>
+        tools:layout="@layout/fragment_study">
+        <argument
+            android:name="deckid"
+            app:argType="string" />
+    </fragment>
     <fragment
         android:id="@+id/cardListFragment"
         android:name="es.uam.eps.dadm.cards.CardListFragment"
@@ -79,6 +83,13 @@
             app:argType="string" />
         <action
             android:id="@+id/action_deckEditFragment_to_deckListFragment"
-            app:destination="@id/deckListFragment" />
+            app:destination="@id/deckListFragment"
+            app:popUpTo="@id/deckListFragment"
+            app:popUpToInclusive="true" />
     </fragment>
+    <fragment
+        android:id="@+id/stadisticFragment"
+        android:name="es.uam.eps.dadm.cards.StadisticFragment"
+        android:label="StadisticFragment"
+        tools:layout="@layout/fragment_stadistic"/>
 </navigation>

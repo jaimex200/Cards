@@ -15,7 +15,6 @@
                 android:layout_height="wrap_content"
                 android:text="@string/title_card_text"
                 android:textAlignment="center">
-
             </TextView>
 
             <androidx.recyclerview.widget.RecyclerView
@@ -36,6 +35,17 @@
             android:layout_marginBottom="20dp"
             android:src="@drawable/ic_baseline_post_add_24"
             android:contentDescription="@string/new_card_fab_description" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/study_deck_fab"
+            style="@style/Widget.Design.FloatingActionButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|start"
+            android:layout_marginStart="20dp"
+            android:layout_marginBottom="20dp"
+            android:src="@drawable/ic_baseline_work_24"
+            android:contentDescription="@string/study_deck_fab_description" />
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
 </layout>

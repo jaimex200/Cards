@@ -32,4 +32,5 @@
     <string name="name_deck_edit_default">Nombre del mazo</string>
     <string name="title_deck_text">Mazos</string>
     <string name="title_card_text">Tarjetas</string>
+    <string name="study_deck_fab_description">Estudiar mazo</string>
 </resources>
