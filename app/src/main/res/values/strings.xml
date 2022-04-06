@@ -32,4 +32,8 @@
     <string name="title_deck_text">Decks</string>
     <string name="title_card_text">Cards</string>
     <string name="study_deck_fab_description">Study deck</string>
+    <string name="normal_card_text">Normal</string>
+    <string name="cloze_card_text">Cloze</string>
+    <string name="optional_card_text">Optional</string>
+    <string name="question_cloze_edit_default">Question with the replace between *</string>
 </resources>

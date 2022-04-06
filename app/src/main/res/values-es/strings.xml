@@ -33,4 +33,8 @@
     <string name="title_deck_text">Mazos</string>
     <string name="title_card_text">Tarjetas</string>
     <string name="study_deck_fab_description">Estudiar mazo</string>
+    <string name="normal_card_text">Normal</string>
+    <string name="cloze_card_text">Cloze</string>
+    <string name="optional_card_text">Opciones</string>
+    <string name="question_cloze_edit_default">Inserta la pregunta con * entre la respuesta</string>
 </resources>

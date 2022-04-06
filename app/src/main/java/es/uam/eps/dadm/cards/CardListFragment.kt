@@ -32,10 +32,8 @@ class CardListFragment: Fragment() {
         binding.cardListRecyclerView.adapter = adapter
 
         binding.newCardFab.setOnClickListener {
-            val card = Card("","")
-            CardsApplication.getDeck(deckid)?.addOne(card)
 
-            it.findNavController().navigate(CardListFragmentDirections.actionCardListFragmentToCardEditFragment(card.id, deckid))
+            it.findNavController().navigate(CardListFragmentDirections.actionCardListFragmentToSelectCardFragment(deckid))
         }
 
         binding.studyDeckFab.setOnClickListener {

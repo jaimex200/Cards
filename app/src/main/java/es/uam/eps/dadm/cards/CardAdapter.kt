@@ -7,6 +7,7 @@ import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import es.uam.eps.dadm.cards.databinding.ListItemCardBinding
 import es.uam.eps.dadm.cards.src.Card
+import es.uam.eps.dadm.cards.src.Cloze
 
 class CardAdapter : RecyclerView.Adapter<CardAdapter.CardHolder>() {
     lateinit var binding: ListItemCardBinding
@@ -17,9 +18,17 @@ class CardAdapter : RecyclerView.Adapter<CardAdapter.CardHolder>() {
         private var local = binding
         fun bind(card: Card, deckid: String) {
             local.card = card
-            itemView.setOnClickListener {
-                it.findNavController()
-                    .navigate(CardListFragmentDirections.actionCardListFragmentToCardEditFragment(card.id, deckid))
+            if (card is Cloze) {
+                itemView.setOnClickListener {
+                    it.findNavController()
+                        .navigate(CardListFragmentDirections.actionCardListFragmentToClozeEditFragment(card.id, deckid))
+                }
+            }
+            else {
+                itemView.setOnClickListener {
+                    it.findNavController()
+                        .navigate(CardListFragmentDirections.actionCardListFragmentToCardEditFragment(card.id, deckid))
+                }
             }
         }
     }

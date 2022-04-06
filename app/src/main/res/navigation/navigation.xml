@@ -32,12 +32,18 @@
             android:id="@+id/action_cardListFragment_to_studyFragment"
             app:destination="@id/studyFragment"
             app:launchSingleTop="false" />
-        <action
-            android:id="@+id/action_cardListFragment_to_cardEditFragment"
-            app:destination="@id/cardEditFragment" />
         <argument
             android:name="deckid"
             app:argType="string" />
+        <action
+            android:id="@+id/action_cardListFragment_to_selectCardFragment"
+            app:destination="@id/selectCardFragment" />
+        <action
+            android:id="@+id/action_cardListFragment_to_cardEditFragment"
+            app:destination="@id/cardEditFragment" />
+        <action
+            android:id="@+id/action_cardListFragment_to_clozeEditFragment"
+            app:destination="@id/clozeEditFragment" />
     </fragment>
     <fragment
         android:id="@+id/cardEditFragment"
@@ -92,4 +98,34 @@
         android:name="es.uam.eps.dadm.cards.StadisticFragment"
         android:label="StadisticFragment"
         tools:layout="@layout/fragment_stadistic"/>
+    <fragment
+        android:id="@+id/selectCardFragment"
+        android:name="es.uam.eps.dadm.cards.SelectCardFragment"
+        android:label="SelectCardFragment"
+        tools:layout="@layout/fragment_select_card">
+        <argument
+            android:name="deckid"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_selectCardFragment_to_cardEditFragment"
+            app:destination="@id/cardEditFragment" />
+        <action
+            android:id="@+id/action_selectCardFragment_to_clozeEditFragment"
+            app:destination="@id/clozeEditFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/clozeEditFragment"
+        android:name="es.uam.eps.dadm.cards.ClozeEditFragment"
+        android:label="ClozeEditFragment"
+        tools:layout="@layout/fragment_cloze_edit">
+        <argument
+            android:name="cardid"
+            app:argType="string" />
+        <argument
+            android:name="deckid"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_clozeEditFragment_to_cardListFragment"
+            app:destination="@id/cardListFragment" />
+    </fragment>
 </navigation>
