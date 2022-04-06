@@ -11,6 +11,8 @@ import es.uam.eps.dadm.cards.databinding.FragmentAboutBinding
 import es.uam.eps.dadm.cards.databinding.FragmentSelectCardBinding
 import es.uam.eps.dadm.cards.src.Card
 import es.uam.eps.dadm.cards.src.Cloze
+import es.uam.eps.dadm.cards.src.Options
+import java.util.*
 
 class SelectCardFragment : Fragment() {
     override fun onCreateView(
@@ -39,6 +41,13 @@ class SelectCardFragment : Fragment() {
             CardsApplication.getDeck(args.deckid)?.addOne(cloze)
             it.findNavController()
                 .navigate(SelectCardFragmentDirections.actionSelectCardFragmentToCardEditFragment(cloze.id, args.deckid))
+        }
+
+        binding.optionalCardButton.setOnClickListener{
+            val optional = Options("","")
+            CardsApplication.getDeck(args.deckid)?.addOne(optional)
+            it.findNavController()
+                .navigate(SelectCardFragmentDirections.actionSelectCardFragmentToOptionalEditFragment(optional.id, args.deckid))
         }
 
         return binding.root

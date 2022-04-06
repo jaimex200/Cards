@@ -112,6 +112,9 @@
         <action
             android:id="@+id/action_selectCardFragment_to_clozeEditFragment"
             app:destination="@id/clozeEditFragment" />
+        <action
+            android:id="@+id/action_selectCardFragment_to_optionalEditFragment"
+            app:destination="@id/optionalEditFragment" />
     </fragment>
     <fragment
         android:id="@+id/clozeEditFragment"
@@ -127,5 +130,17 @@
         <action
             android:id="@+id/action_clozeEditFragment_to_cardListFragment"
             app:destination="@id/cardListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/optionalEditFragment"
+        android:name="es.uam.eps.dadm.cards.OptionalEditFragment"
+        android:label="OptionalEditFragment"
+        tools:layout="@layout/fragment_optional_edit">
+        <argument
+            android:name="cardid"
+            app:argType="string" />
+        <argument
+            android:name="deckid"
+            app:argType="string" />
     </fragment>
 </navigation>

@@ -21,6 +21,10 @@ class Options (
         }
     }
 
+    fun getAnswer(i: Int): String {
+        return answers[i]
+    }
+
     /**Override de la funcion show*/
     override fun show () {
         answers = answers.shuffled()

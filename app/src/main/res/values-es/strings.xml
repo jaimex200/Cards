@@ -37,4 +37,6 @@
     <string name="cloze_card_text">Cloze</string>
     <string name="optional_card_text">Opciones</string>
     <string name="question_cloze_edit_default">Inserta la pregunta con * entre la respuesta</string>
+    <string name="answer_optional_correct_edit_default">Respuesta correcta</string>
+    <string name="answer_optional_incorrect_edit_default">Respuesta incorrecta</string>
 </resources>

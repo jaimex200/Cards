@@ -36,4 +36,6 @@
     <string name="cloze_card_text">Cloze</string>
     <string name="optional_card_text">Optional</string>
     <string name="question_cloze_edit_default">Question with the replace between *</string>
+    <string name="answer_optional_correct_edit_default">Correct answer</string>
+    <string name="answer_optional_incorrect_edit_default">Incorrect Answer</string>
 </resources>
