@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
+import com.google.android.material.snackbar.Snackbar
 import es.uam.eps.dadm.cards.databinding.FragmentCardListBinding
 import es.uam.eps.dadm.cards.src.Card
 
@@ -25,7 +26,7 @@ class CardListFragment: Fragment() {
             container,
             false
         )
-        adapter = CardAdapter()
+        adapter = CardAdapter(resources)
         deckid = CardListFragmentArgs.fromBundle(requireArguments()).deckid
         adapter.data = CardsApplication.getDeck(deckid)?.cards ?: throw Exception("Wrong id")
         adapter.dataDeck = deckid
@@ -37,7 +38,11 @@ class CardListFragment: Fragment() {
         }
 
         binding.studyDeckFab.setOnClickListener {
-            it.findNavController().navigate(CardListFragmentDirections.actionCardListFragmentToStudyFragment(deckid))
+
+            if (CardsApplication.getDeck(deckid)!!.cards.size > 0)
+                it.findNavController().navigate(CardListFragmentDirections.actionCardListFragmentToStudyFragment(deckid))
+            else
+                Snackbar.make(it, resources.getString(R.string.no_cards_review), Snackbar.LENGTH_SHORT).show()
         }
 
         return binding.root

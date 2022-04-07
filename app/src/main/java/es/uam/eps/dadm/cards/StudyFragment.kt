@@ -8,6 +8,7 @@ import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.findNavController
 import com.google.android.material.snackbar.Snackbar
 import es.uam.eps.dadm.cards.databinding.FragmentStudyBinding
 import timber.log.Timber
@@ -28,6 +29,8 @@ class StudyFragment: Fragment() {
         viewModel.update(quality)
 
         if (viewModel.card == null) {
+            v.findNavController()
+                .navigate(StudyFragmentDirections.actionStudyFragmentToDeckListFragment())
             Snackbar.make(v, resources.getString(R.string.no_cards_review), Snackbar.LENGTH_SHORT).show()
         }
 

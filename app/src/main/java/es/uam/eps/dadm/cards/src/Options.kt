@@ -5,11 +5,13 @@ class Options (
     question: String,
     text: String
 ): Card(question, text.split(",")[0]) {
-    private var answers:  List<String>
+    public var answers:  List<String>
+    public var answersOrd: List<String>
 
     /**Inicializa las distintas respuestas*/
     init {
         answers = text.split(",")
+        answersOrd = text.split(",")
     }
 
     /**Enseña las opciones de respuesta*/
@@ -22,7 +24,7 @@ class Options (
     }
 
     fun getAnswer(i: Int): String {
-        return answers[i]
+        return answersOrd[i]
     }
 
     /**Override de la funcion show*/

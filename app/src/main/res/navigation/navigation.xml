@@ -22,6 +22,11 @@
         <argument
             android:name="deckid"
             app:argType="string" />
+        <action
+            android:id="@+id/action_studyFragment_to_deckListFragment"
+            app:destination="@id/deckListFragment"
+            app:popUpTo="@id/deckListFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/cardListFragment"
@@ -44,6 +49,9 @@
         <action
             android:id="@+id/action_cardListFragment_to_clozeEditFragment"
             app:destination="@id/clozeEditFragment" />
+        <action
+            android:id="@+id/action_cardListFragment_to_optionalEditFragment"
+            app:destination="@id/optionalEditFragment" />
     </fragment>
     <fragment
         android:id="@+id/cardEditFragment"
@@ -108,13 +116,19 @@
             app:argType="string" />
         <action
             android:id="@+id/action_selectCardFragment_to_cardEditFragment"
-            app:destination="@id/cardEditFragment" />
+            app:destination="@id/cardEditFragment"
+            app:popUpTo="@id/cardListFragment"
+            app:popUpToInclusive="false" />
         <action
             android:id="@+id/action_selectCardFragment_to_clozeEditFragment"
-            app:destination="@id/clozeEditFragment" />
+            app:destination="@id/clozeEditFragment"
+            app:popUpTo="@id/cardListFragment"
+            app:popUpToInclusive="false" />
         <action
             android:id="@+id/action_selectCardFragment_to_optionalEditFragment"
-            app:destination="@id/optionalEditFragment" />
+            app:destination="@id/optionalEditFragment"
+            app:popUpTo="@id/cardListFragment"
+            app:popUpToInclusive="false" />
     </fragment>
     <fragment
         android:id="@+id/clozeEditFragment"
@@ -129,7 +143,9 @@
             app:argType="string" />
         <action
             android:id="@+id/action_clozeEditFragment_to_cardListFragment"
-            app:destination="@id/cardListFragment" />
+            app:destination="@id/cardListFragment"
+            app:popUpTo="@id/cardListFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/optionalEditFragment"
@@ -142,5 +158,10 @@
         <argument
             android:name="deckid"
             app:argType="string" />
+        <action
+            android:id="@+id/action_optionalEditFragment_to_cardListFragment"
+            app:destination="@id/cardListFragment"
+            app:popUpTo="@id/cardListFragment"
+            app:popUpToInclusive="true" />
     </fragment>
 </navigation>

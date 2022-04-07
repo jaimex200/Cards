@@ -40,11 +40,11 @@ class SelectCardFragment : Fragment() {
             val cloze = Cloze("","")
             CardsApplication.getDeck(args.deckid)?.addOne(cloze)
             it.findNavController()
-                .navigate(SelectCardFragmentDirections.actionSelectCardFragmentToCardEditFragment(cloze.id, args.deckid))
+                .navigate(SelectCardFragmentDirections.actionSelectCardFragmentToClozeEditFragment(cloze.id, args.deckid))
         }
 
         binding.optionalCardButton.setOnClickListener{
-            val optional = Options("","")
+            val optional = Options("",",,")
             CardsApplication.getDeck(args.deckid)?.addOne(optional)
             it.findNavController()
                 .navigate(SelectCardFragmentDirections.actionSelectCardFragmentToOptionalEditFragment(optional.id, args.deckid))

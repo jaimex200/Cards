@@ -38,4 +38,5 @@
     <string name="question_cloze_edit_default">Question with the replace between *</string>
     <string name="answer_optional_correct_edit_default">Correct answer</string>
     <string name="answer_optional_incorrect_edit_default">Incorrect Answer</string>
+    <string name="delete_button_text">Delete</string>
 </resources>

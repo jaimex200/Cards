@@ -14,7 +14,7 @@
         android:layout_height="match_parent"
         android:visibility="@{mainViewModel.card == null ? View.INVISIBLE : View.VISIBLE}">
 
-        <TextView
+        <com.google.android.material.chip.Chip
             android:id="@+id/info_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -22,7 +22,6 @@
             android:text="@{mainViewModel.nDueCards.toString()}"
             android:textSize="20sp"
             tools:text="@string/info_text_view_message" />
-
         <TextView
             android:id="@+id/question_text_view"
             android:layout_width="wrap_content"
@@ -60,7 +59,7 @@
             android:layout_height="wrap_content"
             android:text="@string/answer_button_text" />
 
-        <LinearLayout
+        <com.google.android.material.button.MaterialButtonToggleGroup
             android:id="@+id/difficulty_buttons"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -91,7 +90,7 @@
                 android:text="@string/easy_button_title"
                 android:backgroundTint="@android:color/holo_green_light">
             </Button>
-        </LinearLayout>
+        </com.google.android.material.button.MaterialButtonToggleGroup>
 
     </RelativeLayout>
 </layout>

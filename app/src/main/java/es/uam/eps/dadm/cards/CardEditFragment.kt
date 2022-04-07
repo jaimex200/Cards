@@ -81,5 +81,12 @@ class CardEditFragment : Fragment() {
             view?.findNavController()
                 ?.navigate(CardEditFragmentDirections.actionCardEditFragmentToCardListFragment(deckid))
         }
+
+        binding.deleteCardEditButton.setOnClickListener{
+
+            CardsApplication.getDeck(deckid)!!.cards.remove(card)
+            view?.findNavController()
+                ?.navigate(CardEditFragmentDirections.actionCardEditFragmentToCardListFragment(deckid))
+        }
     }
 }

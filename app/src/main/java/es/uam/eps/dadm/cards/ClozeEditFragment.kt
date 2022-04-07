@@ -32,7 +32,7 @@ class ClozeEditFragment : Fragment() {
             false
         )
 
-        val args = CardEditFragmentArgs.fromBundle(requireArguments())
+        val args = ClozeEditFragmentArgs.fromBundle(requireArguments())
         cloze = CardsApplication.getCard(args.cardid, args.deckid) as Cloze ?: throw Exception("Wrong id")
         binding.cloze = cloze
 
@@ -79,6 +79,13 @@ class ClozeEditFragment : Fragment() {
             cloze.answer = answer
             cloze.question = question
 
+            view?.findNavController()
+                ?.navigate(ClozeEditFragmentDirections.actionClozeEditFragmentToCardListFragment(deckid))
+        }
+
+        binding.deleteClozeEditButton.setOnClickListener{
+
+            CardsApplication.getDeck(deckid)!!.cards.remove(cloze)
             view?.findNavController()
                 ?.navigate(ClozeEditFragmentDirections.actionClozeEditFragmentToCardListFragment(deckid))
         }

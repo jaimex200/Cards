@@ -8,9 +8,6 @@ import timber.log.Timber
 class CardsApplication: Application() {
 
     init {
-        cards.add(Card("To wake up", "Despertarse"))
-        cards.add(Card("To rule out", "Descartar"))
-
         decks.add(Deck("pruebaDeck"))
         decks[0].addOne(Card("To rule out", "Descartar"))
     }
@@ -21,12 +18,7 @@ class CardsApplication: Application() {
     }
 
     companion object {
-        var cards: MutableList<Card> = mutableListOf<Card>()
         var decks: MutableList<Deck> = mutableListOf<Deck>()
-
-        fun numberOfDueCards (): Int {
-            return cards.size
-        }
 
         fun numberOfDecks (): Int {
             return decks.size
@@ -49,10 +41,6 @@ class CardsApplication: Application() {
                 }
             }
             return null
-        }
-
-        fun addCard(card: Card) {
-            cards.add(card)
         }
     }
 }

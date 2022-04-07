@@ -30,7 +30,7 @@ class StudyViewModel: ViewModel() {
     }
 
     fun updateList(deckid: String) {
-        Timber.i(cards.toString())
+        cards = CardsApplication.getDeck(deckid)!!.cards
     }
 
     fun initValues() {

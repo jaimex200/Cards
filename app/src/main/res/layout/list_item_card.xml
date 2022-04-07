@@ -1,12 +1,16 @@
 
 
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:app="http://schemas.android.com/apk/res-auto">
+xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
         <variable
             name="card"
             type="es.uam.eps.dadm.cards.src.Card" />
+        <variable
+            name="type"
+            type="String" />
     </data>
 
     <com.google.android.material.card.MaterialCardView
@@ -35,7 +39,8 @@ xmlns:app="http://schemas.android.com/apk/res-auto">
                 android:textSize="16sp"
                 android:textStyle="bold"
                 android:text="@{card.question}"
-                android:textAppearance="?attr/textAppearanceHeadline6"/>
+                android:textAppearance="?attr/textAppearanceHeadline6"
+                tools:text="Question"/>
 
             <TextView
                 android:id="@+id/list_item_answer"
@@ -45,7 +50,18 @@ xmlns:app="http://schemas.android.com/apk/res-auto">
                 android:textColor="@color/purple_500"
                 android:textSize="16sp"
                 android:text="@{card.answer}"
-                android:textAppearance="?attr/textAppearanceBody2" />
+                android:textAppearance="?attr/textAppearanceBody2"
+                tools:text="Answer"/>
+
+            <TextView
+                android:id="@+id/list_item_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:text="@{type}"
+                android:textAppearance="?attr/textAppearanceBody2"
+                tools:text="type"/>
 
             <TextView
                 android:id="@+id/list_item_date"
@@ -54,7 +70,8 @@ xmlns:app="http://schemas.android.com/apk/res-auto">
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentEnd="true"
                 android:text="@{card.date.substring(0,10)}"
-                android:textAppearance="?attr/textAppearanceBody2"/>
+                android:textAppearance="?attr/textAppearanceBody2"
+                tools:text="Date"/>
 
         </RelativeLayout>
     </com.google.android.material.card.MaterialCardView>

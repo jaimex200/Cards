@@ -65,5 +65,12 @@ class DeckEditFragment: Fragment() {
             view?.findNavController()
                 ?.navigate(DeckEditFragmentDirections.actionDeckEditFragmentToDeckListFragment())
         }
+
+        binding.deleteDeckEditButton.setOnClickListener{
+
+            CardsApplication.decks.remove(deck)
+            view?.findNavController()
+                ?.navigate(DeckEditFragmentDirections.actionDeckEditFragmentToDeckListFragment())
+        }
     }
 }
