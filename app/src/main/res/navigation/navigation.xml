@@ -164,4 +164,9 @@
             app:popUpTo="@id/cardListFragment"
             app:popUpToInclusive="true" />
     </fragment>
+    <fragment
+        android:id="@+id/tutorialFragment"
+        android:name="es.uam.eps.dadm.cards.TutorialFragment"
+        android:label="TutorialFragment"
+        tools:layout="@layout/fragment_tutorial"/>
 </navigation>

@@ -14,4 +14,9 @@
         android:enabled="true"
         android:icon="@drawable/ic_baseline_email_24"
         android:title="@string/about_nav_menu_title"/>
+    <item
+        android:id="@id/tutorialFragment"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_question_answer_24"
+        android:title="@string/tutorial_text_nav"/>
 </menu>

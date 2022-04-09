@@ -39,4 +39,16 @@
     <string name="question_cloze_edit_default">Inserta la pregunta con * entre la respuesta</string>
     <string name="answer_optional_correct_edit_default">Respuesta correcta</string>
     <string name="answer_optional_incorrect_edit_default">Respuesta incorrecta</string>
+    <string name="delete_button_text">Eliminar</string>
+    <string name="tutorial_text_nav">Tutorial</string>
+    <string name="step_1_text">Paso 1</string>
+    <string name="step_2_text">Paso 2</string>
+    <string name="step_3_text">Paso 3</string>
+    <string name="step_1_p_text">Añadir un nuevo mazo en el boton de abajo a la derecha en los mazos</string>
+    <string name="step_2_p_text">Clickar en ese mazo creado y añadir las tarjetas correspondientes</string>
+    <string name="step_3_p_text">Una vez cradas las tarjetas clickando en ellas se podran editar, sino con el boton de abajo a la izqquierda podras estudiar</string>
+    <string name="tutorial_text">Tutorial</string>
+    <string name="author_text">Jaime Muñoz</string>
+    <string name="desc_app_text">App dedicada al aprendizaje por medio del uso de tarjetas</string>
+    <string name="version_text">Version: 1.0.0</string>
 </resources>

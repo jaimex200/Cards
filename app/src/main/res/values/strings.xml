@@ -39,4 +39,15 @@
     <string name="answer_optional_correct_edit_default">Correct answer</string>
     <string name="answer_optional_incorrect_edit_default">Incorrect Answer</string>
     <string name="delete_button_text">Delete</string>
+    <string name="tutorial_text_nav">Tutorial</string>
+    <string name="step_1_text">Step 1</string>
+    <string name="step_2_text">Step 2</string>
+    <string name="step_3_text">Step 3</string>
+    <string name="step_1_p_text">Add a new deck by clicking on the botton right button</string>
+    <string name="step_2_p_text">Click in this deck and add new cards</string>
+    <string name="step_3_p_text">Then you can study the cards by clicking on the bottom left button</string>
+    <string name="tutorial_text">Tutorial</string>
+    <string name="author_text">Jaime Muñoz</string>
+    <string name="desc_app_text">This app was made to study throught cards</string>
+    <string name="version_text">Version: 1.0.0</string>
 </resources>
