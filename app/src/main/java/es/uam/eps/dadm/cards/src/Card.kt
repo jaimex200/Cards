@@ -1,10 +1,15 @@
 package es.uam.eps.dadm.cards.src
 
+import androidx.room.ColumnInfo
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import java.time.*
 import java.util.UUID
 import kotlin.math.roundToLong
 
+@Entity(tableName = "cards_table")
 open class Card(
+    @ColumnInfo(name = "card_question")
     var question: String,
     var answer: String,
     var quality: Int = 0,
@@ -13,8 +18,10 @@ open class Card(
     var nextPracticeDate: String = LocalDateTime.now().toString(),
     var easiness: Double = 2.5,
     var date: String = LocalDateTime.now().toString(),
+    @PrimaryKey
     var id: String = UUID.randomUUID().toString(),
-    var answered: Boolean = false
+    var answered: Boolean = false,
+    var deckId: Long = 0
 ) {
     companion object Load{
         fun fromString(cad: String): Card {

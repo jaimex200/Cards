@@ -1,14 +1,22 @@
 package es.uam.eps.dadm.cards.src
 
+import androidx.room.ColumnInfo
+import androidx.room.Embedded
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import java.io.File
 import java.time.LocalDateTime
 import java.util.*
 
+@Entity(tableName = "decks_table")
 class Deck (
+    @ColumnInfo(name = "deck_name")
     var name: String,
+    @PrimaryKey
     var id: String = UUID.randomUUID().toString(),
     var cards:  MutableList<Card> = mutableListOf(),
-    var cardsErrors:  MutableList<Card> = mutableListOf()
+    var cardsErrors:  MutableList<Card> = mutableListOf(),
+
 ) {
     /** variable para el uso del nuevo alg*/
     var improveAlg = true
